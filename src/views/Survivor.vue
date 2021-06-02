@@ -8,23 +8,25 @@
     <v-row>
       <v-col sm="6" v-for="survivor in survivorData" :key="survivor.name">
         <v-card>
-          <v-row>
-            <v-col sm="6">
-              <v-row >
-                <v-col sm="12">
-                  <v-card-title>{{survivor.name}}</v-card-title>
-                </v-col>
-                <v-col sm="4" v-for="perk in survivor.perks" :key="perk.name">
-                  <v-avatar size="50">
-                    <img :src="perk.name"/>
-                  </v-avatar>
-                </v-col>
-              </v-row>
-            </v-col>
-            <v-col sm="6">
-              <v-img height="140" width="100" :src="survivor.img"></v-img>
-            </v-col>
-          </v-row>
+          <div class="d-flex">
+            <v-row  class="pa-3">
+              <v-col sm="6">
+                <v-row>
+                  <v-col sm="12">
+                    <v-card-title>{{survivor.name}}</v-card-title>
+                  </v-col>
+                  <v-col sm="4" v-for="perk in survivor.perks" :key="perk.name">
+                    <v-avatar size="50">
+                      <img :src="perk.name"/>
+                    </v-avatar>
+                  </v-col>
+                </v-row>
+              </v-col>
+              <v-col sm="6">
+                <v-img height="140" width="100" :src="survivor.img" class="mx-auto"></v-img>
+              </v-col>
+            </v-row>
+          </div>
         </v-card>
       </v-col>
     </v-row>
@@ -71,7 +73,8 @@
     name: "Survivor",
     data(){
       return{
-        survivorData: [{
+        survivorData: [
+          {
           name: 'Twide',
           description:'Miedoso',
           img: Twide,
@@ -80,7 +83,8 @@
             {name: Demuestra},
             {name: Lider}
           ]
-        },{
+        },
+          {
           name: 'Meg',
           description:'Corredora nata',
           img: Meg,
@@ -89,7 +93,8 @@
             {name: Impulso},
             {name: Adrenalina
           }]
-        },{
+        },
+          {
           name: 'Nea',
           description:'Urbaneando',
           img: Nea,
@@ -98,7 +103,8 @@
             {name: Evasion},
             {name: ConCalle
           }]
-        },{
+        },
+          {
           name: 'Jake',
           description:'Silencioso',
           img: Jake,
@@ -107,7 +113,8 @@
             {name: Espiritu},
             {name: Sabotear
           }]
-        },{
+        },
+          {
           name: 'Claudette',
           description: 'Sanadora',
           img: Claudette,
@@ -116,7 +123,8 @@
             {name: Conocimientos},
             {name: Autocuracion
           }]
-        },{
+        },
+          {
           name: 'Bill',
           description: 'Veterano de guerra',
           img: Bill,
@@ -125,7 +133,8 @@
             {name: Tiempo},
             {name: Irrompible
           }]
-        }]
+        }
+        ]
       }
     }
 
